@@ -62,4 +62,9 @@
 	</form>
  --%>
 
-
+<script>
+$('#modify_submit').click(function(){
+	$('#modify_form').attr({action:"${ctx}/member/modify", 
+		method:"POST"}).submit();
+});
+</script>

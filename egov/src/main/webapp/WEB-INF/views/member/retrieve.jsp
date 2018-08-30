@@ -40,8 +40,13 @@
 <script>
 $('#modify_btn').click(function(){
 	alert('업데이트 버튼 클릭');
-	location.href = app.x()+'/member/retrieve/'+user.get('memID')+'/modify';
+	location.href = '${ctx}/member/retrieve/${user.memID}/modify';
 	/*location.href = app.x()+'/move/public/member/modify';*/
+});
+$('#remove_btn').click(function(){
+	alert('삭제 버튼 클릭');
+	location.href = '${ctx}/member/retrieve/${user.memID}/remove';
+	/*location.href = app.x()+'/move/public/member/remove';*/
 });
 </script>
 

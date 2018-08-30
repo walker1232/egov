@@ -41,4 +41,5 @@ $('#login_btn').click(function(){
 $('#add_btn').click(function(){
 	location.href ='${ctx}/move/public/member/add';
 });
+
 </script>

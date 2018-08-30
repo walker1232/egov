@@ -60,13 +60,12 @@ public class MemberServiceImpl implements MemberService{
 
 	@Override
 	public void remove(MemberDTO p) {
-	//	System.out.println("remove 2 " + p.getMemID());
 		memberDAO.delete(p);
 		
 	}
 
 	@Override
-	public boolean login(MemberDTO p) {
+	public MemberDTO login(MemberDTO p) {
 		System.out.println("Login 4 " + p);
 		return memberDAO.login(p);
 	}

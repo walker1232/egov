@@ -83,11 +83,11 @@ public class MemberController {
 		//model.addAttribute("user", m);
 		return "retrieve_page";
 	}
-	@RequestMapping(value="/romove", method=RequestMethod.POST)
+	@RequestMapping(value="/remove", method=RequestMethod.POST)
 	public String remove(@ModelAttribute("member") MemberDTO member, Model model) {
 		logger.info("MemberController remove ::: {}.", "ENTER");
-		System.out.println("remove 1 " + member.getMemID());
-		System.out.println("member session : "+ member.getMemID());
+		System.out.println("remove  " + member.getMemID());
+		System.out.println("member session : "+ member.getPassword());
 		memberService.remove(member);
 		return "redirect:/";
 	}
@@ -96,9 +96,17 @@ public class MemberController {
 		logger.info("MemberController login ::: {}.", "ENTER");
 		System.out.println(member.getMemID());
 		System.out.println(member.getPassword());
-		//member = memberService.login(member);
-		boolean m = memberService.login(member);
+		member = memberService.login(member);
+		/*boolean m = memberService.login(member);*/ //boolean 사용
 		String f = "";
+		if(member != null){
+			System.out.println("성공");
+			f = "login_success";
+			model.addAttribute("user", memberService.retrieve(member));
+		}else{
+			System.out.println("실패");
+			f = "login_page";
+		}
 		
 		/*if(m == true) {
 		f = "login_success";
@@ -108,14 +116,14 @@ public class MemberController {
 		f = "login_page";
 		}*/
 		
-		if(m == true) {
+		/*if(m == true) {  boolean 사용
 			System.out.println("로그인 성공");
 			f = "login_success";
 			model.addAttribute("user", memberService.retrieve(member));
 		}else {
 			System.out.println("로그인 실패");
 			f = "login_page";
-		}
+		}*/
 		return f;
 	}
 	@RequestMapping("/logout")

@@ -17,6 +17,11 @@
 	        form.submit();
 	});
 	
+	$('#login_submit').click(function(){
+		alert('로그인 버튼 클릭');
+		$('#login_form').attr({action:"${ctx}/member/login", 
+			method:"POST"}).submit();
+	});
 	
 
 </script>

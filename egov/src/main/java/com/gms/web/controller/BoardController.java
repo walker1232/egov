@@ -94,7 +94,7 @@ public class BoardController {
 		System.out.println(member.getMemID());
 		System.out.println(member.getPassword());
 		//member = memberService.login(member);
-		boolean m = memberService.login(member);
+		//boolean m = memberService.login(member);
 		String f = "";
 		
 		/*if(m == true) {
@@ -105,14 +105,14 @@ public class BoardController {
 		f = "login_page";
 		}*/
 		
-		if(m == true) {
+		/*if(m == true) {
 			System.out.println("로그인 성공");
 			f = "login_success";
 			model.addAttribute("user", memberService.retrieve(member));
 		}else {
 			System.out.println("로그인 실패");
 			f = "login_page";
-		}
+		}*/
 		return f;
 	}
 	@RequestMapping("/logout")
@@ -122,4 +122,8 @@ public class BoardController {
 	}
 	@RequestMapping("/fileupload")
 	public void fileupload() {}
+	@RequestMapping("/register")
+	public String register(){
+		return "register_page";
+	}
 }

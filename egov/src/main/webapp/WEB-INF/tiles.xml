@@ -39,6 +39,10 @@
     	<put-attribute name="nav" value="/WEB-INF/views/member/auth.jsp"/>
     	<put-attribute name="content" value="/WEB-INF/views/member/remove.jsp"/>
     </definition>
+    <definition name="register_page" extends="public">
+    	<put-attribute name="nav" value="/WEB-INF/views/member/auth.jsp"/>
+    	<put-attribute name="content" value="/WEB-INF/views/board/register.jsp"/>
+    </definition>
     
 </tiles-definitions>
 

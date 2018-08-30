@@ -38,8 +38,7 @@
 <script>
 $('#add_submit').click(function(){
 	alert('add_submit !!');
-
-	$('#add_form').attr({action:app.x()+"/member/add", 
+	$('#add_form').attr({action:"${ctx}/member/add", 
 		method:"POST"}).submit();
 	
 	/*var form = document.getElementById('join_form');

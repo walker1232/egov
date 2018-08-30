@@ -29,20 +29,32 @@
       </div>
     </nav>
     <script>
-    	user.session({
+    	/* user.session({
     		memID : '${user.memID}',
     		name : '${user.name}',
     		gender : '${user.gender}',
     		age : '${user.age}',
     		roll : '${user.roll}',
     		teamID : '${user.teamID}'
-    	});
+    	}); */
     	/* app.user.set('memID') */
     	$('#board_write').click(function(){
-	    		location.href = '/move/public/member/login';
+	    		location.href = '${ctx}/board/register';
 	    	});
     	$('#board_write').click(function(){
     		alert('board_list click!!')
+    	});
+    	$('#board_write').click(function(){
+    		alert('board_list click!!')
+    	});
+    	$('#logout_btn').click(function(){
+    		alert('로그아웃 버튼 클릭');
+    		location.href = '${ctx}/member/logout';
+    	});
+    	$('#retrieve_btn').click(function(){
+    		alert('마이페이스 버튼 클릭');
+    		/*location.href = app.x()+'/move/public/member/retrieve';*/
+    		location.href = '${ctx}/member/retrieve/${user.memID}/retrieve';
     	});
     	
     </script>
