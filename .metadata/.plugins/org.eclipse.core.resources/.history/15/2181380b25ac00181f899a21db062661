@@ -1,0 +1,7 @@
+package com.gms.web.service.impl;
+
+import com.gms.web.service.BoardService;
+
+public class ArticleServiceImpl implements BoardService{
+
+}

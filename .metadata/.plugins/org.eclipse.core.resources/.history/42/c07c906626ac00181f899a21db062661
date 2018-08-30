@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<% String ctx = application.getContextPath(); %>
+
+	<div id="content"style="margin: auto" align="center">
+		<form id="login_form" name="login_form" >
+			<font color="black">아이디: </font><input type="text" name="memID" required>
+			<font color="black">비밀번호: </font><input type="text" name= "password" required>
+			<input id="login_submit" type="button" value="Login">
+		</form>
+	</div> <!-- content end -->
+	
+<script>
+	$('#login_form').attr({action:app.x()+"/member/login", 
+		method:"POST"}).submit();
+	app.session.ctx(x);
+	document.getElementById('login_form').addEventListener('click', function(){
+		var x = service.nullChecker([document.login_form.memID.value, document.login_form.password.value]);
+			var form = document.getElementById('login_form');
+			form.action = "${ctx}/member/login";
+	 		form.method = "post";
+			form.submit();
+	});
+	/* $('#login_submit').click(function(){
+	alert('로그인 버튼 클릭');
+	
+	$('#login_form').attr({action:app.x()+"/member/login", 
+		method:"POST"}).submit();
+	app.session.ctx(x);
+	/*var from = $('user_login_form');
+	from.action = app.x() + "/member/login";
+	form.method = "post";
+	form.submit();*/
+	
+	/*location.href = app.x()+'/member/login/A10/1';*/
+
+</script>
+	
