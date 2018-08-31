@@ -132,10 +132,6 @@ user.get = x=>{
 	return sessionStorage.getItem(x);
 }
 
-
-
-
-
 /*app.memID=()=>{
 	return app.sessionStorage.getItem('memID');
 }
