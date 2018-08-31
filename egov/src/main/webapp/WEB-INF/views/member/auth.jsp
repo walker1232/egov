@@ -53,8 +53,9 @@
     	});
     	$('#retrieve_btn').click(function(){
     		alert('마이페이스 버튼 클릭');
+    		location.href = '${ctx}/member/retrieve';
     		/*location.href = app.x()+'/move/public/member/retrieve';*/
-    		location.href = '${ctx}/member/retrieve/${user.memID}/retrieve';
+    		/* location.href = '${ctx}/member/retrieve/${user.memID}/retrieve'; */
     	});
     	
     </script>

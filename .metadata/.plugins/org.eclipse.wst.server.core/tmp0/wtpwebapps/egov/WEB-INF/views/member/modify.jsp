@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-
-
 	<style>
 	table, th, td {
     border: 1px solid black;
@@ -14,7 +12,6 @@
 	<tr>
 		<!-- <td rowspan="3" colspan="2" >공란</td> -->
 		<td>아이디</td>
-		<input type="hidden" name="memID" value="${user.memID}"/>
 		<td>${user.memID}</td>
 	</tr>
 	<tr>
@@ -28,6 +25,12 @@
 	<tr>
 		<td>나이</td>
 		<td>${user.age}</td>
+	</tr>
+	<tr>
+		<td>성별</td>
+		<td>${user.gender}</td>
+	</tr>
+	<tr>
 		<td>${user.teamID}</td>
 		<td>
 			<input type="radio" id="teamid_1" name="teamID" value="none" checked="checked"/>없음
@@ -38,8 +41,6 @@
 		</td>
 	</tr>
 	<tr>
-		<td>성별</td>
-		<td>${user.gender}</td>
 		<td>${user.roll}</td>
 		<td>
 			<select name="roll" id="roll">
@@ -62,4 +63,9 @@
 	</form>
  --%>
 
-
+<script>
+$('#modify_submit').click(function(){
+	$('#modify_form').attr({action:"${ctx}/member/modify", 
+		method:"POST"}).submit();
+});
+</script>

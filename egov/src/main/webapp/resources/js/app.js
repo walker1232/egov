@@ -2,7 +2,7 @@
 
 
 var app = app || {};
-var user = user || {};
+
 app = {
 		init : x => {
 			console.log('step 1 ::');
@@ -119,7 +119,7 @@ app.userid = ()=>{
 	return sessionStorage.getItem('memID');
 }
 
-
+var user = user || {};
 user.session = x =>{
 	$.each(x, (k, v)=>{
 		/*alert('key:'+k+', value:'+v);*/
@@ -131,6 +131,10 @@ user.session = x =>{
 user.get = x=>{
 	return sessionStorage.getItem(x);
 }
+
+
+
+
 
 /*app.memID=()=>{
 	return app.sessionStorage.getItem('memID');

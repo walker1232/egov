@@ -13,12 +13,6 @@
               <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="board_write">게시글쓰기</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="board_list">게시글목록보기</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="search_btn">Search</a>
             </li>
             <li class="nav-item">
@@ -41,4 +35,5 @@ $('#login_btn').click(function(){
 $('#add_btn').click(function(){
 	location.href ='${ctx}/move/public/member/add';
 });
+
 </script>

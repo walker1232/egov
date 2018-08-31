@@ -124,6 +124,6 @@ public class BoardController {
 	public void fileupload() {}
 	@RequestMapping("/register")
 	public String register(){
-		return "register_page";
+		return "auth:board/register.tiles";
 	}
 }

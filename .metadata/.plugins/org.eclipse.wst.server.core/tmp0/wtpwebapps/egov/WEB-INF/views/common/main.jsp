@@ -8,7 +8,7 @@
 	
 	<link href="${ctx}/resources/other_resources/dist/css/skins/AdminLTE.min.css" rel="stylesheet" type="text/css" />
 	<link href="${ctx}/resources/other_resources/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
-	
+	 <link href="${ctx}/resources/other_resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	
 	<link href="${ctx}/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>

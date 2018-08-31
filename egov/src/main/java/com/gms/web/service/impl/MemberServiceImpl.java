@@ -16,16 +16,20 @@ public class MemberServiceImpl implements MemberService{
 	@Autowired MemberMapper memberDAO;
 	@Override
 	public void add(MemberDTO p) {
-		System.out.println("ADD 2 " + p);
-		int current = Integer.valueOf(new SimpleDateFormat("yyyy").format(new Date()))+1-1900;
+		/*System.out.println("ADD 2 " + p);*/
+		        
+		p.setAge( String.valueOf(Integer.valueOf(new SimpleDateFormat("yyyy")
+				.format(new Date())) + 1 - 1900 - Integer.parseInt(p.getSsn().substring(0,2))));
+        p.setGender(p.getSsn().substring(7,8).equals("1") ? "man" : "woman");
+                    
+        memberDAO.insert(p);
+		        
+        /*int current = Integer.valueOf(new SimpleDateFormat("yyyy").format(new Date()))+1-1900;
         String ssn = p.getSsn();
         String gender = "";
         gender=(ssn.substring(7,8).equals("1"))? "man":"woman";
         p.setAge(String.valueOf(current - Integer.parseInt(ssn.substring(0,2))));
-        p.setGender(gender);
-		
-        memberDAO.insert(p);
-		
+        p.setGender(gender);*/
 	}
 
 	@Override
@@ -42,7 +46,7 @@ public class MemberServiceImpl implements MemberService{
 
 	@Override
 	public MemberDTO retrieve(MemberDTO p) {
-		System.out.println("MemberServiceImpe retrieve 진입 "+p);
+		/*System.out.println("MemberServiceImpe retrieve 진입 "+p);*/
 		return memberDAO.selectOne(p);
 	}
 
@@ -66,7 +70,6 @@ public class MemberServiceImpl implements MemberService{
 
 	@Override
 	public MemberDTO login(MemberDTO p) {
-		System.out.println("Login 4 " + p);
 		return memberDAO.login(p);
 	}
 
